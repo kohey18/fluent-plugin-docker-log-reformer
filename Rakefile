@@ -1,10 +1,9 @@
 require "bundler/gem_tasks"
-
-
 require 'rake/testtask'
+
 Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**.rb'
+  test.libs << "test"
+  test.test_files = Dir["test/**/test_*.rb"].sort
   test.verbose = true
 end
 
